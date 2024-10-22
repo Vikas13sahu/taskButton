@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+.toggle-switch {
+    /* border: blue 2px solid; */
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.toggle-switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #b3b0b0;
+    border-radius: 50px;
+    transition: 0.4s;
+}
+
+.slider:before {
+    /* border: 2px solid white; */
+    content: "";
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    left: 10px;
+    bottom: 10px;
+    background-color: rgb(7, 7, 7);
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.toggle-switch input:checked+.slider {
+    background-color: #f5f382;
+}
+
+.toggle-switch input:checked+.slider:before {
+    transform: translateX(200px);
+}
+
+.mode-icon {
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    width: 280px;
+    top: 25px;
+    left: 0;
+    transition: transform 0.4s;
+}
+
+.sun-icon,
+.moon-icon {
+    /* border: green solid 2px; */
+    font-size: 50px;
+    transition: opacity 0.4s;
+    position: absolute;
+    top: 0;
+    left: 30;
+    opacity: 0;
+}
+
+.moon-icon {
+    right: 4px;
+}
+
+.visible {
+    opacity: 1;
+}
+
+.sun-icon {
+    left: -15px;
+}
